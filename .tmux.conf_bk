@@ -1,17 +1,25 @@
-########################################
-# 基本設定 
-########################################
-## prefixキーの変更
-# C-bのキーバインドを解除
+# C-bのキーバインドを解除する
 unbind C-b
-# prefixキーをC-zに変更
+
+# prefixキー(^)をC-zに変更する
+unbind C-z
 set -g prefix C-z
+
 # C-z C-zでtmux内のプログラムにC-zを送る
-bind-key C-z send-prefix
+bind C-z send-prefix
 
 # ^ + r でtmuxの設定を更新する
 unbind r
-bind r source-file ~/.tmux.conf \; display "Reloaded!"
+bind r source-file ~/.tmux.conf; display "Reloaded!"
+
+# キーストロークのディレイを減らす
+set -sg escape-time 1
+
+# ウィンドウのインデックスを1から始める
+# set -g base-index 1
+
+# ペインのインデックスを1から始める
+# setw -g pane-base-index 1
 
 # 日本語環境の設定
 setw -g utf8 on
@@ -21,9 +29,7 @@ set-window-option -g utf8 on
 # マウス操作を有効にする
 setw -g mouse
 
-########################################
-# Look & Feel
-########################################
+##### 外観
 # ステータスバー
 set-option -g status-utf8 on        # ステータスバーを Utf-8 に対応
 set-option -g status-interval 1     # ステータスバーを1秒毎に描画し直す
@@ -31,11 +37,7 @@ set-option -g status-justify centre # センタライズ（主にウィンドウ
 set-option -g status-position top   # ステータスバーをトップに配置する
 set-option -g status-left-length 90
 set-option -g status-right-length 90
-# Prefixキーを押した時に視覚的に確認できるようにする
-# [#S] : セッション名
-# [#I] : ウィンドウ番号
-# [#P] : ペイン番号
-set-option -g status-left '#[fg=cyan,bg=#303030]#{?client_prefix,#[reverse],} #H[#S][#I][#P] #[default]'
+set-option -g status-left '#[fg=cyan,bg=#303030]#{?client_prefix,#[reverse],} #H[#I][#P][#S] #[default]' # Prefixキーを押した時に視覚的に確認できるようにする
 set-option -g status-right '[%y-%m-%d(%a) %H:%M]'
 set -g status-bg black
 set -g status-fg white
@@ -58,9 +60,7 @@ setw -g window-status-current-fg blue
 # color
 set-option -g default-terminal xterm-256color
 
-########################################
-# KeyBinding
-########################################
+##### キーバインド
 # 横分割
 unbind 2
 bind 2 split-window -v
@@ -84,14 +84,14 @@ bind ? list-keys
 # コピーモード時にemacsのキーバインドを利用する
 set-window-option -g mode-keys emacs
 
-# コピーモードのコピー結果をクリップボードに渡す
-# xselをインストールしておく必要あり。
-unbind -t emacs-copy M-w
-unbind -t emacs-copy C-w
-bind-key -t emacs-copy M-w copy-pipe "xsel -bi"
-bind-key -t emacs-copy C-w copy-pipe "xsel -bi"
+# コピーモードのコピー結果をクリップボードに渡す(#xselをインストールしておく必要あり)
+#unbind -t emacs-copy M-w
+#unbind -t emacs-copy C-w
+#bind-key -t emacs-copy M-w copy-pipe “xsel -bi”
+#bind-key -t emacs-copy C-w copy-pipe “xsel -bi”
 
 # マウスでコピーアンドペースト用のウィンドウが出てくる(外部でコピーしたものをペーストする方法がわからないので、これで代用する。)
-bind-key -t emacs-copy Enter copy-pipe "cat | xsel -i --clipboard"
+
+#bind-key -t emacs-copy Enter copy-pipe “cat | xsel -i –clipboard”
 
 
