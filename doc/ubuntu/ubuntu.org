@@ -207,6 +207,8 @@ githubのページで操作すれば良い．
 hiro@hiro-VirtualBox:~$ git clone https://github.com/hiromotomasaki/dotfiles
 #+END_SRC
 ** tmux
-ここを参照する．
+[[https://github.com/hiromotomasaki/dotfiles/blob/master/doc/other/tmux/tmux.org][ここ
+]]を参照する．
 ** emacs
-ここを参照する．
+[[https://github.com/hiromotomasaki/dotfiles/blob/master/doc/other/emacs/emacs.org][ここ]]
+を参照する．
