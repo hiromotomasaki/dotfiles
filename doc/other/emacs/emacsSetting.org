@@ -5,6 +5,11 @@ emacsのパッケージ管理・ディレクトリ構造は
 実際にパッケージを利用するときは
 [[http://qiita.com/kai2nenobu/items/5dfae3767514584f5220][ここ]]
 を参考にして、積極的にuse-packageを利用する．
+
+その他参考
+
+[[https://github.com/shunk031/emacs.d/tree/master][ここ]]
+
 ** .emacs.d内のフォルダ・ファイルの作成
 #+BEGIN_SRC sh
 [17:35:41]hiro@hiro-VirtualBox:~$ cd .emacs.d
@@ -47,3 +52,13 @@ fi
 [18:06:10]hiro@hiro-VirtualBox:.emacs.d$ ./init/link.sh
 #+END_SRC
 keybindのF5にeval-bufferを割り当てておいたので、init.elの再評価はF5を押せば良い
+** 入れたいもの（メモ）
+mozc
+
+ac-mozc
+
+google-translate
+
+tex
+
+origami
