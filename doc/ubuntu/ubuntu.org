@@ -131,13 +131,64 @@ hiro@hiro-VirtualBox:~$ echo $PS1
 * インストールや設定
 ** git
 *** インストール
+#+BEGIN_SRC sh
+[16:27:19]hiro@hiro-VirtualBox:dotfiles$ sudo apt install git
+#+END_SRC
 *** 設定
+#+BEGIN_SRC sh
+[16:27:25]hiro@hiro-VirtualBox:dotfiles$ git config --global user.name "John Doe"
+[16:27:30]hiro@hiro-VirtualBox:dotfiles$ git config --global user.email "johndoe@example.com"
+#+END_SRC
+設定値の確認は以下のコマンドを入力する．
+#+BEGIN_SRC sh
+[16:27:40]hiro@hiro-VirtualBox:dotfiles$ git config --list
+#+END_SRC
 *** 説明
+Gitを使えばコード，設定ファイル，文書のバージョン管理ができる．
 *** 使用方法
+dotfilesの作成を通して使用方法の説明をする．
 **** 新規作成
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ mkdir dotfiles && cd dotfiles
+hiro@hiro-VirtualBox:dotfiles$ git init
+hiro@hiro-VirtualBox:dotfiles$ touch .gitignore README.org
+hiro@hiro-VirtualBox:dotfiles$ git add .
+hiro@hiro-VirtualBox:dotfiles$ git commit -m 'commit'
+#+END_SRC
+githubのページでリポジトリを作成してアドレスを取得する．
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ git remote add origin https://github.com/hiromotomasaki/dotfiles.git
+hiro@hiro-VirtualBox:dotfiles$ git push -u origin master
+#+END_SRC
+***** .gitignoreの書き方
+.gitignoreにはgithubにバックアップを取らないファイル・ディレクトリを書く。
+- 特定の拡張子を無視
+  + *.o
+- 特定のファイルを無視(先頭に/)
+  + /npm-debug.log
+- 特定のディレクトリを無視(先頭と末尾に/)
+  + / bin/ (/とbの間は詰める)
 **** 更新
-**** 完全削除
+通常の更新は以下のコマンドを打つ．
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:dotfiles$ git add .
+hiro@hiro-VirtualBox:dotfiles$ git commit -m 'commit'
+hiro@hiro-VirtualBox:dotfiles$ git push
+#+END_SRC
+.gitignoreによってバックアップ対象外になったファイルをgithubからの削除することも含む更新は以下のコマンドを打つ．
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:dotfiles$ git rm --cached -r .
+hiro@hiro-VirtualBox:dotfiles$ git add -A .
+hiro@hiro-VirtualBox:dotfiles$ git commit -m "commit"
+hiro@hiro-VirtualBox:dotfiles$ git push
+#+END_SRC
+**** ウェブ上からの完全削除
+githubのページで操作すれば良い．
 **** クローン
-** dotfilesの作成
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ git clone https://github.com/hiromotomasaki/dotfiles
+#+END_SRC
 ** tmux
+ここを参照する．
 ** emacs
+ここを参照する．
