@@ -236,3 +236,5 @@ For more information about these matters, see the file named COPYING.
 [17:14:13]hiro@hiro-VirtualBox:~$ emacs -nw
 #+END_SRC
 * .emacs.d内の編集
+[[][ここ]]
+を参照する．
