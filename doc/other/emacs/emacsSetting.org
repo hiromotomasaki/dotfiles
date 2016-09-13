@@ -1,0 +1,13 @@
+* emacsの設定
+emacsのパッケージ管理・ディレクトリ構造は
+[[http://tarao.hatenablog.com/entry/20150221/1424518030][ここ]]
+を参考にEl-Getを利用する。
+実際にパッケージを利用するときは
+[[http://qiita.com/kai2nenobu/items/5dfae3767514584f5220][ここ]]
+を参考にして、積極的にuse-packageを利用する。
+** .emacs.d内のフォルダ・ファイルの作成
+#+BEGIN_SRC sh
+[17:35:41]hiro@hiro-VirtualBox:~$ cd .emacs.d
+[17:35:45]hiro@hiro-VirtualBox:.emacs.d$ mkdir init-loader init insert recipes
+[17:35:49]hiro@hiro-VirtualBox:.emacs.d$ touch init.el
+#+END_SRC

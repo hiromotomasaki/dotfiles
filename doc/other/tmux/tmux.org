@@ -387,3 +387,47 @@ bind-key q 'kill-session'
 bind-key C-q 'kill-server'
 
 #+END_SRC
+* 使用例
+セッション(Session)とは何か
+- tmuxを起動すると生成されるtmuxの管理プロセス．なので，ひとつのサーバーに対して1つである．
+ウインドウ(Window)とは何か
+- 1つの仮想端末のこと．
+
+私の使い方
+- セッションはプロジェクト単位で使う
+- ウィンドウはemacs起動用、その他用に分ける
+- その他用の方で複数のペインを利用する
+
+** 新規セッション開始
+tmux new -s ProjectA
+** 今のセッションをデタッチ
+Pre d
+** 新規セッション開始
+tmux new -s ProjectB
+** 今のセッションをデタッチ
+Pre d
+** 現在のセッションリストの表示
+tmux ls
+** ProjectBのセッションを終了する
+tmux kill-session -t ProjectB
+
+(すべてのセッションを終了するときにはtmux kill-serverとする)
+** ProjectAのセッションにアタッチする
+tmux a -t ProjectA
+** ProjectAの名前の変更
+tmux rename -t ProjectA Project
+** ウィンドウ・ペインに対して
+** 0番目のウィンドウの名前の変更
+Pre ,
+
+Emacs
+** ウィンドウの新規作成
+Pre c
+** 今作成した1番目のウィンドウの名前の変更
+Pre ,
+
+Other
+** ウィンドウの移動
+Pre w
+
+0

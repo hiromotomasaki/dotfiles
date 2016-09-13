@@ -117,6 +117,11 @@ hiro@hiro-VirtualBox:~$ cat /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
 user-session=ubuntu
 allow-guest=false
 #+END_SRC
+*** treeのインストールしてフォルダ構造を見るコマンドを使えるようにする
+以下のコマンドを実行する.
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ sudo apt install tree
+#+END_SRC
 ** ~/.bashrc内で$PS1を変更
 「/w」を「/W」に変更し「/t」を追加する.
 #+BEGIN_SRC sh
