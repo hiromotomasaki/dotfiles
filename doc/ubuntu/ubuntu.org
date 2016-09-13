@@ -1,5 +1,6 @@
 * Ubuntuを入れたらまず行うこと
-** versionの確認
+** 確認
+*** Ubuntuのversion
 #+BEGIN_SRC sh
 hiro@hiro-VirtualBox:~$ cat /etc/lsb-release
 DISTRIB_ID=Ubuntu
@@ -7,19 +8,136 @@ DISTRIB_RELEASE=16.04
 DISTRIB_CODENAME=xenial
 DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
 #+END_SRC
-** $PS1の変更
-「/w」を「/W」に変更し「/t」を追加する。
+*** bashのversion
+#+BEGIN_SRC sh
+[16:00:33]hiro@hiro-VirtualBox:dotfiles$ bash --version
+GNU bash, バージョン 4.3.46(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2013 Free Software Foundation, Inc.
+ライセンス GPLv3+: GNU GPL バージョン 3 またはそれ以降 <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+#+END_SRC
+*** 言語
+#+BEGIN_SRC sh
+[15:58:53]hiro@hiro-VirtualBox:dotfiles$ locale
+LANG=ja_JP.UTF-8
+LANGUAGE=ja
+LC_CTYPE="ja_JP.UTF-8"
+LC_NUMERIC="ja_JP.UTF-8"
+LC_TIME="ja_JP.UTF-8"
+LC_COLLATE="ja_JP.UTF-8"
+LC_MONETARY="ja_JP.UTF-8"
+LC_MESSAGES="ja_JP.UTF-8"
+LC_PAPER="ja_JP.UTF-8"
+LC_NAME="ja_JP.UTF-8"
+LC_ADDRESS="ja_JP.UTF-8"
+LC_TELEPHONE="ja_JP.UTF-8"
+LC_MEASUREMENT="ja_JP.UTF-8"
+LC_IDENTIFICATION="ja_JP.UTF-8"
+LC_ALL=
+#+END_SRC
+*** CPU
+#+BEGIN_SRC sh
+[15:59:25]hiro@hiro-VirtualBox:dotfiles$ lscpu
+Architecture:          x86_64
+CPU 操作モード:   32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+コアあたりのスレッド数:1
+ソケットあたりのコア数:4
+Socket(s):             1
+NUMA ノード数:     1
+ベンダー ID:       GenuineIntel
+CPU ファミリー:   6
+モデル:             58
+Model name:            Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+ステッピング:    9
+CPU MHz:               3392.296
+BogoMIPS:              6784.59
+ハイパーバイザのベンダー:KVM
+仮想化タイプ:    完全仮想化
+L1d キャッシュ:   32K
+L1i キャッシュ:   32K
+L2 キャッシュ:    256K
+L3 キャッシュ:    8192K
+NUMA node0 CPU(s):     0-3
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic popcnt aes xsave avx rdrand hypervisor lahf_lm
+#+END_SRC
+*** CPU名
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ cat /proc/cpuinfo | grep "model name"
+model name      : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+model name      : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+model name      : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+model name      : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+#+END_SRC
+*** メモリ
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ cat /proc/meminfo | grep MemTotal
+MemTotal:        4955692 kB
+#+END_SRC
+** 設定
+*** Webにアクセスするアイコンとアプリの削除
+Amazonのアイコンを消し以下のコマンドを実行する.
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ sudo apt purge unity-webapps-common
+#+END_SRC
+*** メニューの位置情報をWindows風に変更
+システム設定 -> 外観 -> 挙動
+
+・ワークスペースを有効にする
+
+・ウィンドウのメニューの表示 -> ウィンドウのタイトルバーの中
+
+・メニューの表示 -> 常に表示
+*** 展開できるファイル形式を増やす
+以下のコマンドを実行する.
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ sudo apt install p7zip
+#+END_SRC
+*** 英字フォルダーにする
+以下のコマンドを実行する.
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ LANG=C xdg-user-dirs-gtk-update
+#+END_SRC
+なお,
+*** 句読点の変更
+Dashで「mozc」と入力して「Mozcの設定」を選択 -> 句読点「, .」に変更
+*** ゲストセッションの無効
+以下のコマンドを実行する.
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ sudo nano /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+#+END_SRC
+この行末に「allow-guest=false」を加える．
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ cat /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf 
+[Seat:*]
+user-session=ubuntu
+allow-guest=false
+#+END_SRC
+** ~/.bashrc内で$PS1を変更
+「/w」を「/W」に変更し「/t」を追加する.
 #+BEGIN_SRC sh
 hiro@hiro-VirtualBox:~$ echo $PS1
 \[\e]0;[\t]\u@\h: \W\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\t]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$
 #+END_SRC
 ** 更新
 #+BEGIN_SRC sh
-$ sudo apt update
-$ sudo apt upgrade
+[15:52:52]hiro@hiro-VirtualBox:~$ sudo apt update
+[15:54:45]hiro@hiro-VirtualBox:~$ sudo apt upgrade
 #+END_SRC
 * インストールや設定
-** dotfiles
-*** git
-*** tmux
-*** emacs
+** git
+*** インストール
+*** 設定
+*** 説明
+*** 使用方法
+**** 新規作成
+**** 更新
+**** 完全削除
+**** クローン
+** dotfilesの作成
+** tmux
+** emacs
