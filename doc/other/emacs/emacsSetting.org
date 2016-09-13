@@ -1,13 +1,36 @@
 * emacsの設定
 emacsのパッケージ管理・ディレクトリ構造は
 [[http://tarao.hatenablog.com/entry/20150221/1424518030][ここ]]
-を参考にEl-Getを利用する。
+を参考にEl-Getを利用する．
 実際にパッケージを利用するときは
 [[http://qiita.com/kai2nenobu/items/5dfae3767514584f5220][ここ]]
-を参考にして、積極的にuse-packageを利用する。
+を参考にして、積極的にuse-packageを利用する．
 ** .emacs.d内のフォルダ・ファイルの作成
 #+BEGIN_SRC sh
 [17:35:41]hiro@hiro-VirtualBox:~$ cd .emacs.d
 [17:35:45]hiro@hiro-VirtualBox:.emacs.d$ mkdir init-loader init insert recipes
 [17:35:49]hiro@hiro-VirtualBox:.emacs.d$ touch init.el
+[17:51:35]hiro@hiro-VirtualBox:.emacs.d$ ls
+auto-save-list  init  init-loader  init.el  insert  recipes
 #+END_SRC
+** init.elへの記述
+主にel-getとinit-loaderに関する記述を行う．
+** 分割ファイルの作り方
+例えば
+=eval-buffer.el=
+を
+=init/eval-buffer.el=
+に作成する場合
+#+BEGIN_SRC sh
+[18:05:11]hiro@hiro-VirtualBox:~$ cd .emacs.d
+[18:05:14]hiro@hiro-VirtualBox:.emacs.d$ vi ./init/eval-buffer.el 
+[18:05:46]hiro@hiro-VirtualBox:.emacs.d$ cat ./init/eval-buffer.el 
+;; ************* Fキー ************* ;;
+;; bufferの評価
+(global-set-key [f5] 'eval-buffer)
+;; ********************************* ;;
+[18:05:55]hiro@hiro-VirtualBox:.emacs.d$ ln -s ./init/eval-buffer.el ./init-loader/99_eval-buffer.el
+[18:06:10]hiro@hiro-VirtualBox:.emacs.d$ unlink ./init-loader/99_eval-buffer.el 
+[18:06:16]hiro@hiro-VirtualBox:.emacs.d$ ln -s ./init/eval-buffer.el ./init-loader/99_eval-buffer.el
+#+END_SRC
+keybindのF5にeval-bufferを割り当てておいたので、init.elの再評価はF5を押せば良い
