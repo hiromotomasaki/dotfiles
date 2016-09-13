@@ -7,16 +7,6 @@ tmux 2.1
 * 設定
 #+BEGIN_SRC sh
 [16:28:40]hiro@hiro-VirtualBox:~$ cd dotfiles && touch .tmux.conf
-hiro@hiro-VirtualBox:dotfiles$ vi setup.sh
-hiro@hiro-VirtualBox:dotfiles$ cat setup.sh 
- #!/bin/bash
-
-  DOT_FILES=(.bashrc .profile .tmux.conf)
-
- for file in ${DOT_FILES[@]}
- do
-     ln -s $HOME/dotfiles/$file $HOME/$file
- done
 [16:30:40]hiro@hiro-VirtualBox:dotfiles$ chmod +x setup.sh
 [16:31:40]hiro@hiro-VirtualBox:dotfiles$ ./setup.sh
 #+END_SRC

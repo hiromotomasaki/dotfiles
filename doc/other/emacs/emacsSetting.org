@@ -29,10 +29,21 @@ auto-save-list  init  init-loader  init.el  insert  recipes
 ;; bufferの評価
 (global-set-key [f5] 'eval-buffer)
 ;; ********************************* ;;
-[18:05:55]hiro@hiro-VirtualBox:.emacs.d$ ln -s -v $HOME/dotfiles/.emacs.d/init/eval-buffer.el $HOME/dotfiles/.emacs.d/init-loader/00_eval-buffer.el
-'/home/hiro/.emacs.d/init-loader/00_eval-buffer.el' -> '/home/hiro/.emacs.d/init/eval-buffer.el'
-[18:06:10]hiro@hiro-VirtualBox:.emacs.d$ unlink $HOME/dotfiles/.emacs.d/init-loader/00_eval-buffer.el
-[18:06:16]hiro@hiro-VirtualBox:.emacs.d$ ln -s -v $HOME/dotfiles/.emacs.d/init/eval-buffer.el $HOME/dotfiles/.emacs.d/init-loader/00_eval-buffer.el
-'/home/hiro/.emacs.d/init-loader/00_eval-buffer.el' -> '/home/hiro/.emacs.d/init/eval-buffer.el'
+[18:05:55]hiro@hiro-VirtualBox:.emacs.d$ vi init/link.sh
+[18:06:10]hiro@hiro-VirtualBox:.emacs.d$ cat init/link.sh
+#!/bin/bash
+fromDir="${HOME}/dotfiles/.emacs.d/init"
+toDir="${HOME}/dotfiles/.emacs.d/init-loader"
+
+num="00"
+file="eval-buffer.el"
+if [ ! -e "${toDir}/${num}_${file}" ]; then
+    echo "${num}_${file} not exis, make symbolic link to ${toDir}/${num}_${file}"
+    ln -s "${fromDir}/${file}" "${toDir}/${num}_${file}"
+else
+    echo "${num}_${file} exist"
+fi
+[18:06:10]hiro@hiro-VirtualBox:.emacs.d$ chmod +x init/link.sh
+[18:06:10]hiro@hiro-VirtualBox:.emacs.d$ ./init/link.sh
 #+END_SRC
 keybindのF5にeval-bufferを割り当てておいたので、init.elの再評価はF5を押せば良い

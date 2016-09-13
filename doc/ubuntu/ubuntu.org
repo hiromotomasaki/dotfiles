@@ -171,18 +171,33 @@ hiro@hiro-VirtualBox:dotfiles$ mv ~/.bashrc .
 hiro@hiro-VirtualBox:dotfiles$ mv ~/.profile .
 hiro@hiro-VirtualBox:dotfiles$ vi setup.sh
 hiro@hiro-VirtualBox:dotfiles$ cat setup.sh 
- #!/bin/bash
+#!/bin/bash
 
-  DOT_FILES=(.bashrc .profile)
+files=.*
 
- for file in ${DOT_FILES[@]}
- do
-     ln -s $HOME/dotfiles/$file $HOME/$file
- done
+for file in ${files}
+do
+    filepath="${PWD}/${file}"
+    homefile="${HOME}/${file}"
+
+    # . と .. .git .gitignoreは抜かす
+    test $file == ".git" && continue
+    test $file == ".gitignore" && continue
+    test $file == "." && continue
+    test $file == ".." && continue
+
+    # .hogehogeが存在しなければ、シンボリックリンクを作成
+    if [ ! -e "${homefile}" ]; then
+	echo "${file} not exis, make symbolic link to ${homefile}"
+	ln -s "${filepath}" "${homefile}"
+    else
+	echo "${file} exist"
+    fi
+done
 hiro@hiro-VirtualBox:dotfiles$ chmod +x setup.sh
 hiro@hiro-VirtualBox:dotfiles$ ./setup.sh
 #+END_SRC
-dotfiles内にドットファイルを追加した場合はsetup.sh内のDOT_FILESにそれを追加すること．
+dotfiles内にドットファイルは「.」,「..」,「.git」,「.gitignore」を除いて$HOMEディレクトリにリンクが貼られる.
 ***** .gitignoreの書き方
 .gitignoreにはgithubにバックアップを取らないファイル・ディレクトリを書く。
 - 特定の拡張子を無視

@@ -199,17 +199,7 @@ export PATH=$PATH:$HOME/local/emacs/bin
 #+END_SRC
 次にリンクを貼る．
 #+BEGIN_SRC sh
-[16:28:40]hiro@hiro-VirtualBox:~$ cd dotfiles && touch .emacs.d
-hiro@hiro-VirtualBox:dotfiles$ vi setup.sh
-hiro@hiro-VirtualBox:dotfiles$ cat setup.sh 
- #!/bin/bash
-
-  DOT_FILES=(.bashrc .profile .tmux.conf .emacs.d)
-
- for file in ${DOT_FILES[@]}
- do
-     ln -s $HOME/dotfiles/$file $HOME/$file
- done
+[16:28:40]hiro@hiro-VirtualBox:~$ cd dotfiles && mkdir .emacs.d
 [16:30:40]hiro@hiro-VirtualBox:dotfiles$ chmod +x setup.sh
 [16:31:40]hiro@hiro-VirtualBox:dotfiles$ ./setup.sh
 #+END_SRC
@@ -235,6 +225,36 @@ For more information about these matters, see the file named COPYING.
 #+BEGIN_SRC sh
 [17:14:13]hiro@hiro-VirtualBox:~$ emacs -nw
 #+END_SRC
+* 日本語入力について
+現在の設定だと日本語入力機能（Imput Method、scim、uim、ibusなど）とemacsの日本語入力がかぶってしまう．試しに~/tmp.txtを開き，Ctrl+Spaceを押す．
+すると，mozcで日本語入力モードがスタートする．
+Ctrl+Spaceはemacsの選択開始を示すキーとかぶっているのでこのままだと困る．
+そこで，日本語入力機能をemacs上でOFFにする。~/.Xresourcesの中身を以下のようにして保存する．
+#+BEGIN_SRC sh
+[18:45:14]hiro@hiro-VirtualBox:~$ cd dotfiles/
+[18:47:02]hiro@hiro-VirtualBox:dotfiles$ touch .Xresources
+[18:47:20]hiro@hiro-VirtualBox:dotfiles$ vi .Xresources 
+[18:47:49]hiro@hiro-VirtualBox:dotfiles$ cat .Xresources 
+emacs.useXIM:false
+[18:49:40]hiro@hiro-VirtualBox:dotfiles$ ./setup.sh 
+[18:50:01]hiro@hiro-VirtualBox:dotfiles$ xrdb -merge ~/.Xresources 
+#+END_SRC
+emacsを一度終了し, もう一度emacsを起動する. 
+そして, Ctrl+Spaceではmozcが起動しないことを確認する. 
+** mozcの設定前
+あとでmozcを入れるがその前の段階での入力の仕方
+*** 小文字の入力
+x + a = ぁ
+
+x + i = ぃ
+
+x + u = ぅ
+
+x + e = ぇ
+
+x + o = ぉ
+*** カタカナへの変換
+Shift + k
 * .emacs.d内の編集
 [[https://github.com/hiromotomasaki/dotfiles/blob/master/doc/other/emacs/emacsSetting.org][ここ]]
 を参照する．
