@@ -1,0 +1,25 @@
+* Ubuntuを入れたらまず行うこと
+** versionの確認
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
+#+END_SRC
+** $PS1の変更
+「/w」を「/W」に変更し「/t」を追加する。
+#+BEGIN_SRC sh
+hiro@hiro-VirtualBox:~$ echo $PS1
+\[\e]0;[\t]\u@\h: \W\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\t]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$
+#+END_SRC
+** 更新
+#+BEGIN_SRC sh
+$ sudo apt update
+$ sudo apt upgrade
+#+END_SRC
+* インストールや設定
+** dotfiles
+*** git
+*** tmux
+*** emacs
