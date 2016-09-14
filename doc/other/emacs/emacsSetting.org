@@ -198,3 +198,10 @@ tex
 origami
 
 GithubのREADME.orgをプレビューする
+** 注意点
+Recipeを書かないといけない
+
+Rictyの設定必要
+
+
+

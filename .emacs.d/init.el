@@ -1,12 +1,6 @@
 ;; 参考 : http://tarao.hatenablog.com/entry/20150221/1424518030
 ;; 参考(生) : https://github.com/tarao/dotfiles/blob/master/.emacs.d/init.el
 
-;; ルール
-;; 00 : 基本的な設定
-;; 50 : ファイル拡張子ごとの設定
-;; 99 : キーバインドの設定
-;; 01~49, 51~98 : その他
-
 ;; emacs directory
 
 ;; Added by Package.el.  This must come before configurations of
@@ -87,3 +81,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
