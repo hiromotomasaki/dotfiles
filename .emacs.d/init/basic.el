@@ -25,6 +25,9 @@
 (setq locale-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+(add-hook 'window-setup-hook
+(lambda nil
+;; font setting
 ;; フォントをRitcyに変更する
 (set-face-attribute 'default nil
                     :family "Ricty Discord"
@@ -38,6 +41,10 @@
 (set-fontset-font (frame-parameter nil 'font)
                   'katakana-jisx0201
                   (cons "Ricty Discord" "iso10646-1"))
+;; window positioning
+(setq default-frame-alist '((top . 0) (left . 0) (width . 100) (height . 40)))
+)
+)
 
 ;; Ritcyの手順
 ;; http://www.rs.tus.ac.jp/yyusa/ricty.html
