@@ -196,3 +196,5 @@ google-translate
 tex
 
 origami
+
+GithubのREADME.orgをプレビューする

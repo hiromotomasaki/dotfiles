@@ -14,7 +14,8 @@
 #
 
 # init-loadにリンクを貼ったときの名前(${num}_${filename}.el)
-linkedFiles=("00-basic.el" "00-eval-buffer.el")
+linkedFiles=("00-eval-buffer.el" "00-basic.el" "00-fix.el" "01-custom.el" "01-appearance.el" "02-undo-tree.el")
+linkedFiles+=("99-finish.el")
 #######################################################################
 
 # リンク先のディレクトリ
