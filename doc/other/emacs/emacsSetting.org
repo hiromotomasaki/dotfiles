@@ -205,9 +205,24 @@ yasnipet
 
 tex
 
-eww
+eww -> OK
+| q | EWWを閉じる                                          |
+| g | ページの再読み込み                                   |
+| w | ページのURLをコピー                                  |
+| d | リンク先ファイルをダウンロード（“~/Downloads/“）   |
+| l | ページを戻る                                         |
+| r | ページを進む                                         |
+| H | 履歴を表示（eww history バッファが開く）             |
+| b | ブックマークに追加                                   |
+| B | ブックマーク一覧を表示（eww bookmarksバッファが開く) |
+| & | ウェブサイトを外部ブラウザで開く                     |
+| v | ページのソースを表示する                             |
+| C | クッキー一覧を表示する                               |
 
-GithubのREADME.orgをプレビューする
+GithubのREADME.orgをプレビューする -> OK
+
+M-x org-preview-html-mode
+
 ** 注意点
 Recipeを書かないといけない
 
