@@ -193,7 +193,7 @@ web-search -> OK
 
 undo-tree -> OK
 
-origami
+oritatami -> OK
 
 mozc
 

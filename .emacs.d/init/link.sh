@@ -15,9 +15,7 @@
 
 # init-loadにリンクを貼ったときの名前(${num}_${filename}.el)
 
-linkedFiles=("00-eval-buffer.el" "00-basic.el" "00-fix.el" "01-custom.el" "01-appearance.el" "02-undo-tree.el" "02-popwin.el" "95-google-translate.el" "95-internet-search.el")
-# linkedFiles=("00-eval-buffer.el" "00-basic.el" "00-fix.el" "01-custom.el" "01-appearance.el" "02-undo-tree.el" "02-popwin.el" "95-google-translate.el")
-
+linkedFiles=("00-eval-buffer.el" "00-basic.el" "00-fix.el" "01-custom.el" "01-appearance.el" "02-undo-tree.el" "02-popwin.el" "02-oritatami.el" "95-google-translate.el" "95-internet-search.el")
 linkedFiles+=("99-finish.el")
 #######################################################################
 
