@@ -74,3 +74,7 @@
 
   (global-set-key (kbd "M-s g") 'search-web-entry_2)
 
+
+;; M-s gでgoogle検索
+;; M-s eで英次郎
+

@@ -191,6 +191,12 @@ libncurses5-dev/xenial 6.0+20160213-1ubuntu1 amd64
 [20:16:00]hiro@hiro-VirtualBox:emacs-25.1$ make install -j4
 [20:17:30]hiro@hiro-VirtualBox:emacs-25.1$
 #+END_SRC
+
+** ewwのために
+#+BEGIN_SRC sh
+[19:58:09]hiro@hiro-VirtualBox:.emacs.d$ sudo apt install libxml2-dev
+#+END_SRC
+
 * パスの設定とdotfilesへのリンク貼り
 ~/.bashrc内に次を追加する．
 #+BEGIN_SRC sh

@@ -187,21 +187,29 @@ done
 #+END_SRC
 keybindのF5にeval-bufferを割り当てておいたので、init.elの再評価はF5を押せば良い
 ** 入れたいもの（メモ）
+google-translate -> OK
+
+web-search -> OK
+
+undo-tree -> OK
+
+origami
+
 mozc
 
 ac-mozc
 
-google-translate
+auto-complete
+
+yasnipet
 
 tex
 
-origami
+eww
 
 GithubのREADME.orgをプレビューする
 ** 注意点
 Recipeを書かないといけない
 
 Rictyの設定必要
-
-
 

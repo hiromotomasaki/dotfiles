@@ -18,7 +18,7 @@
   (popwin-mode 1)
 
   (setq popwin:adjust-other-windows t)
-  
+
   ;; *quickrun* バッファをポップアップ表示させる
   (push '("*quickrun*") popwin:special-display-config)
 
