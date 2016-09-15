@@ -1,23 +1,31 @@
-/*
- * %file% - 
+/**
+ * %file% - %bdesc%
  *
+ * Copyright (c) 2009 TAKAHASHI,Toru <torutk@gmail.com>
+ * 
  *
- *  $Id: %file% 261 2008-07-25 06:16:44Z higepon $
  */
-
 #ifndef %include-guard%
 #define %include-guard%
 
-namespace scheme {
+#include <iosfwd>
 
-class %file-without-ext%
-{
+%namespace-open%
+
+class %file-without-ext% {
 public:
+    /// Default constructor
     %file-without-ext%();
+    /// Destructor
     ~%file-without-ext%();
-
+    /// Copy constructor
+    %file-without-ext%(const %file-without-ext%& rhs);
+    /// Assignment operator
+    %file-without-ext%& operator=(const %file-without-ext%& rhs);
 };
 
-}; // namespace scheme
+/// stream output operator
+std::ostream& operator<<(std::ostream& lhs, const %file-without-ext%& rhs);
 
-#endif // %include-guard%
+%namespace-close%
+#endif /* %include-guard% */

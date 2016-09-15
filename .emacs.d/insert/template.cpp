@@ -1,10 +1,50 @@
-/*
- * %file% - 
+/**
+ * %file% - %bdesc%
  *
+ * Copyright (c) 2009 TAKAHASHI,Toru <torutk@gmail.com>
+ * 
  *
- *  $Id: %file% 183 2008-07-04 06:19:28Z higepon $
  */
+#include %include%
+#include <ostream>
 
-#include "%file-without-ext%.h"
+%namespace-open%
 
-using namespace scheme;
+/**
+ * Default constructor
+ */
+%file-without-ext%::%file-without-ext%() {
+}
+
+/**
+ * Default destructor
+ */
+%file-without-ext%::~%file-without-ext%() {
+}
+
+/**
+ * Copy constructor
+ */
+%file-without-ext%::%file-without-ext%(const %file-without-ext%& rhs) {
+}
+
+/**
+ * Assignment operator
+ */
+%file-without-ext%& %file-without-ext%::operator=(const %file-without-ext%& rhs) {
+    if (this != &rhs) {
+        // TODO: implement copy
+    }
+    return *this;
+}
+
+/**
+ * stream output operator
+ */
+std::ostream& operator<<(std::ostream& lhs, const %file-without-ext%& rhs) {
+    lhs << "%namespace%::%file-without-ext%{" <<
+        // TODO: implement out stream of member data
+        "}";
+    return lhs;
+}
+%namespace-close%
