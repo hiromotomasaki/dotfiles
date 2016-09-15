@@ -9,6 +9,8 @@
 
 ;; ===================================================================
 
+(bundle flycheck)
+
 (use-package flycheck
   :defer t
   :init
