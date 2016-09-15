@@ -74,11 +74,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (nil))))
+ '(package-selected-packages (quote (mozc-popup mozc nil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((((class color) (min-colors 89)) (:foreground "#aaaaaa" :background "#1f1f1f"))))
+ '(header-line ((((class color) (min-colors 89)) (:background "#3f3f3f" :box nil))))
+ '(mode-line ((((class color) (min-colors 89)) (:foreground "#8fb28f" :background "#3f3f3f" :box nil))))
+ '(mode-line-inactive ((((class color) (min-colors 89)) (:background "#5f5f5f" :box nil))))
+ '(region ((((class color) (min-colors 89)) (:background "#8c8ce8")))))
 

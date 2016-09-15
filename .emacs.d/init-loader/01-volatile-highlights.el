@@ -1,0 +1,1 @@
+/home/hiro/dotfiles/.emacs.d/init/volatile-highlights.el
