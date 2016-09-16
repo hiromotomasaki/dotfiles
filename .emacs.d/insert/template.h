@@ -1,31 +1,24 @@
 /**
- * %file% - %bdesc%
+ * %file%
  *
- * Copyright (c) 2009 TAKAHASHI,Toru <torutk@gmail.com>
- * 
+ * Copyright (c) 2016 HIROMOTO,Masaki
+ *
  *
  */
+
 #ifndef %include-guard%
 #define %include-guard%
 
-#include <iosfwd>
+namespace hiro {
 
-%namespace-open%
-
-class %file-without-ext% {
+class %file-without-ext%
+{
 public:
-    /// Default constructor
     %file-without-ext%();
-    /// Destructor
     ~%file-without-ext%();
-    /// Copy constructor
-    %file-without-ext%(const %file-without-ext%& rhs);
-    /// Assignment operator
-    %file-without-ext%& operator=(const %file-without-ext%& rhs);
+
 };
 
-/// stream output operator
-std::ostream& operator<<(std::ostream& lhs, const %file-without-ext%& rhs);
+} // namespace hiro
 
-%namespace-close%
-#endif /* %include-guard% */
+#endif // %include-guard%

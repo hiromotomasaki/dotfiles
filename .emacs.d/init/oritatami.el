@@ -23,8 +23,8 @@
           '(lambda ()
              (hs-minor-mode 1)))
 
-(define-key global-map (kbd "C-;") 'hs-toggle-hiding)
+(define-key global-map (kbd "C-^") 'hs-toggle-hiding)
 
-;; C-;でかっこを折り畳む
+;; C-^でかっこを折り畳む
 
 

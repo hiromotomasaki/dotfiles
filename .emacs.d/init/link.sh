@@ -15,7 +15,7 @@
 
 # init-loadにリンクを貼ったときの名前(${num}_${filename}.el)
 
-linkedFiles=("00-eval-buffer.el" "00-basic.el" "00-fix.el" "01-custom.el" "01-appearance.el" "01-anzu.el" "01-rainbow-delimiters.el" "01-volatile-highlights.el" "01-abbrev.el" "02-undo-tree.el" "02-popwin.el" "02-oritatami.el" "03-eshell.el" "05-whitespace-mode.el" "10-hokann.el" "50-gdb.el" "51-c-mode.el" "52-nxml-mode.el" "53-autoinsert.el" "60-tex.el" "61-aspell.el" "95-google-translate.el" "95-internet-search.el" "96-org-preview-html.el")
+linkedFiles=("00-eval-buffer.el" "00-basic.el" "00-fix.el" "01-custom.el" "01-appearance.el" "01-anzu.el" "01-rainbow-delimiters.el" "01-volatile-highlights.el" "01-abbrev.el" "02-undo-tree.el" "02-popwin.el" "03-eshell.el" "05-whitespace-mode.el" "10-hokann.el" "50-gdb.el" "51-c-mode.el" "52-nxml-mode.el" "53-autoinsert.el" "60-tex.el" "61-aspell.el" "95-google-translate.el" "95-internet-search.el" "96-org-preview-html.el" "98-oritatami.el")
 linkedFiles+=("99-finish.el")
 #######################################################################
 
