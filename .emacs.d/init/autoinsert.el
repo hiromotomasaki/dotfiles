@@ -6,7 +6,8 @@
 (setq auto-insert-alist
       (append '(
                ("\\.cpp$" . ["template.cpp" my-template])
-               ("\\.h$" . ["template.h" my-template])
+               ("\\.hpp$" . ["template.hpp" my-template])
+	       ("\\.h$" . ["template.h" my-template])
               ) auto-insert-alist))
 (add-hook 'find-file-hooks 'auto-insert)
 

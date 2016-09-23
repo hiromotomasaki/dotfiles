@@ -123,6 +123,11 @@ fi
 export PATH=$PATH:$HOME/local/emacs/bin
 #XMODIFIERS=@im=none emacs
 
+# boostのlibのパスの新規登録(コンパイル時にパスの指定をするならいらない)
+export LD_LIBRARY_PATH=$HOME/local/boost/lib
+# boostのlibのパスの新規登録(コンパイル時にパスの指定をするならいらない)
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/Caffe/build/lib
+
 ##############################################################################
 # hiro customized until here.
 ##############################################################################
