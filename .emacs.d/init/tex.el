@@ -3,6 +3,7 @@
 ;; sudo apt-add-repository ppa:texlive-backports/ppa
 ;; sudo apt install texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra
 ;; sudo apt install mercurial
+;; sudo apt install latexmk
 
 (bundle yatex)
 
