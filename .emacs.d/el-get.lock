@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((auctex :checksum "18f178393fd4c2880cff917f2bd421a3273cd708")
+      '((yatex :checksum "e37af485338a332839b6f04b8524f400538d1801")
+        (auctex :checksum "18f178393fd4c2880cff917f2bd421a3273cd708")
         (migemo :checksum "c2240afa9afc0f003bb1d846710505e8e8e38169")
         (auto-complete-c-headers :checksum "52fef720c6f274ad8de52bef39a343421006c511")
         (vs-set-c-style :checksum "7efbd14971c70e3dec9e0637b02f7909d1cfd34f")
