@@ -4,4 +4,5 @@ $dvipdf = $dvipdf='dvipdfmx %S';
 $dvips = 'pdvips';
 $dvi_previewer = 'start xdvi';
 $pdf_previewer = 'start evince';
+$max_repeat = 5;
 $pdf_mode = 3;
