@@ -29,7 +29,7 @@
 		  eshell-mode
 		  nxml-mode
 		  python-mode
-		  auctex-mode
+		  yatex-mode
 		  arduino-mode
 		  graphviz-dot-mode
 		  php-mode))
