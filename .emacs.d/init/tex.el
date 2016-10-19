@@ -33,6 +33,10 @@
 (setq tex-command "latexmk -pvc")      ; 保存したら自動で再コンパイル
 ;; (setq tex-command "latexmk")
 
+;; texファイルを開くと自動でRefTexモード
+;;
+;(add-hook 'latex-mode-hook 'turn-on-reftex)
+(add-hook 'yatex-mode-hook 'turn-on-reftex)
 
 ;; ;; C-c C-t j 
 ;; ;; コンパイル 

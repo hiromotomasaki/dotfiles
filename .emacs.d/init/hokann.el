@@ -91,7 +91,7 @@
 ;; ;; 辞書を引いて関数の自動補完
 (bundle yasnippet)
 (use-package yasnippet
- :diminish yas-minor-mode
+ ;; :diminish yas-minor-mode
  :bind (:map yas-minor-mode-map
             ("C-x i i" . yas-insert-snippet)
             ("C-x i n" . yas-new-snippet)
