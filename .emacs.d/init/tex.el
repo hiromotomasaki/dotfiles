@@ -31,7 +31,7 @@
 
 ;; pdfの自動作成のために再度変更（嫌だったらコメントアウト）
 ;; (setq tex-command "latexmk -pvc")      ; 保存したら自動で再コンパイル
-;; (setq tex-command "latexmk")
+(setq tex-command "latexmk")
 
 ;; texファイルを開くと自動でRefTexモード
 ;;
