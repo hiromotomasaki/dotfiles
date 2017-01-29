@@ -125,8 +125,10 @@ export PATH=$PATH:$HOME/local/emacs/bin
 
 # boostのlibのパスの新規登録(コンパイル時にパスの指定をするならいらない)
 export LD_LIBRARY_PATH=$HOME/local/boost/lib
-# boostのlibのパスの新規登録(コンパイル時にパスの指定をするならいらない)
+# caffeのlibのパスの新規登録(コンパイル時にパスの指定をするならいらない)
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/caffe/build/lib
+# lpsolveのlibのパスの新規登録(コンパイル時にパスの指定をするならいらない)
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lpsolve
 
 ##############################################################################
 # hiro customized until here.
